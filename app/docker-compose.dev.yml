@@ -1,0 +1,8 @@
+services:
+  frontend:
+    container_name: frontend-dev
+    build: ~/code/projects/tinkeriando/tinkeriando-fe/app
+    volumes:
+      - ./src:/frontend/src
+    ports:
+      - 3000:3000
