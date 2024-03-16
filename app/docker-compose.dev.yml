@@ -1,7 +1,10 @@
 services:
   frontend:
     container_name: frontend-dev
-    build: ~/code/projects/tinkeriando/tinkeriando-fe/app
+    image: fronted-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     volumes:
       - ./src:/frontend/src
     ports:
