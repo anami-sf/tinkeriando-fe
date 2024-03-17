@@ -1,0 +1,11 @@
+services:
+  frontend:
+    container_name: frontend-dev
+    image: fronted-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/frontend/src
+    ports:
+      - 3000:3000

@@ -1,0 +1,17 @@
+FROM node:lts-alpine AS development
+
+ENV NODE_ENV development
+
+WORKDIR /frontend
+
+COPY package.json .
+
+COPY yarn.lock .
+
+RUN yarn install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD [ "yarn", "dev" ]
