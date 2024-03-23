@@ -1,17 +1,25 @@
-## Run server with Docker
+## DEVELOPMENT - Run development server (local) with Docker
 
 # Move into folder containing Dockerfile
 cd app
 
-# Buld dev docker image
+# Build dev docker image
 docker build -t frontend:latest -f Dockerfile.dev . 
 
 # Run Docker container 
 docker run --name frontend -p 3000:3000 frontend:latest
 
-## Docker compose
-### Run
+### Docker compose
 `docker-compose -f docker-compose.dev.yml up`
+
+## PREVIEW
+# Build preview docker image
+`docker build -t frontend:latest -f Dockerfile.dev . `
+
+## PRODUCTION - Run Docker 
+`docker build -t anami127001/tinkeriando-ui:latest -f Dockerfile.prod .`
+
+`docker run -d -p 3000:80 --name tinkeriando-ui anami127001/tinkeriando-ui:latest`
 
 # React + TypeScript + Vite
 
