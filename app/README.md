@@ -1,3 +1,14 @@
+## Run server with Docker
+
+# Move into folder containing Dockerfile
+cd app
+
+# Buld dev docker image
+docker build -t frontend:latest -f Dockerfile.dev . 
+
+# Run Docker container 
+docker run --name frontend -p 3000:3000 frontend:latest
+
 ## Docker compose
 ### Run
 `docker-compose -f docker-compose.dev.yml up`

@@ -17,11 +17,13 @@ const FetchGetRequest = () => {
         let postData = await response.json();
         setData(postData.Hello);
         setError(null);
-      } catch (err) {
+      } catch (err: any) {
         setError(err.message);
         setData(null);
       } finally {
         setLoading(false);
+        console.log(loading)
+        console.log(error)
       }
     };
 
